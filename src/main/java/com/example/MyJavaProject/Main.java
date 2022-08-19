@@ -27,7 +27,7 @@ class 전사 {
     void 공격(String 이름, String 무기) {
         this.이름 = 이름;
         this.무기 = 무기;
-        System.out.printf("%s(이)가 %s(으)로 공격합니다.%n", 이름, 무기);
+        재공격();
     }
     void 재공격(){
         System.out.printf("%s(이)가 %s(으)로 공격합니다.%n", 이름, 무기);
