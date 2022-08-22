@@ -12,3 +12,20 @@ public class Main {
     }
 }
 
+class 전사 {
+    int 나이;
+
+   무기 a무기;
+}
+
+class 무기 {
+
+}
+
+class 활 extends 무기 {
+
+}
+
+class 칼 extends 무기{
+
+}
