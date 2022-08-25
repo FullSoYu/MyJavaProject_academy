@@ -1,28 +1,17 @@
 package com.example.MyJavaProject;
 
+// 문제 : 아래와 같이 출력 되도록 해주세요.
+// 조건 : 생성자를 단 1개만 사용해주세요.
+
 class Main {
     public static void main(String[] args) {
 
-        System.out.println(new 사람().a왼팔.길이 + "cm");
-        // 출력 : 100cm
+        int 엄지손가락_길이 = new 사람().a왼팔.a손.a엄지손가락.길이;
+
+        System.out.println(엄지손가락_길이 + "cm");
+        // 출력 : 5cm
 
     }
 }
 
 
-class 사람 {
-
-    사람() {
-        a왼팔 = new 왼팔();
-    }
-    왼팔 a왼팔;
-
-}
-
-class 왼팔 {
-    int 길이;
-
-    왼팔() {
-        길이 = 100;
-    }
-}
