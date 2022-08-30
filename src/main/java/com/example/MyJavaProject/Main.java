@@ -1,18 +1,25 @@
 package com.example.MyJavaProject;
 
-// 문제 : 아래 질문에 답해주세요.
-
-// 1 : 사람 클래스 안에 있는 생성자의 개수는?
-// 2 : 사람 클래스의 부모 클래스는?
-// 3 : 사람 클래스의 부모 클래스에 생성자가 1개 있다고 가정할 때 사람 클래스 안에 있는 생성자의 총 개수는?
+// 문제 : 아래가 오류없이 실행되도록 해주세요.
+// 조건 : 사람 클래스만 수정할 수 있습니다.
 
 class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        new 사람();
     }
 }
 
+class 동물 {
+    동물(String 이름) {
+        System.out.println("동물(String 이름) 실행됨!");
+        System.out.println("이름 : " + 이름);
+    }
+    동물(String 이름, int 나이) {
+        System.out.println("동물(String 이름, int 나이) 실행됨!");
+        System.out.println("이름 : " + 이름);
+        System.out.println("나이 : " + 나이);
+    }
+}
 
-class 사람 {
-
+class 사람 extends 동물 {
 }
