@@ -4,29 +4,17 @@ package com.example.MyJavaProject;
 class Main {
     public static void main(String[] args) {
 
-        new 사람();
-        // 출력 : 사람이 태어났습니다.
+        계산기 a계산기 = new 계산기();
 
-        new 사람(10);
-        // 출력 : 태어나서부터 10살인 사람이 태어났습니다.
+        System.out.println(a계산기.더하기(10, 20));
+        // 출력 : 30
 
-        new 사람(20);
-        // 출력 : 태어나서부터 20살인 사람이 태어났습니다.
+        System.out.println(a계산기.더하기(10, 20, 30));
+        // 출력 : 60
 
-
+        System.out.println(a계산기.더하기(10.5, 20, 30));
+        // 출력 : 60.5
 
     }
-}
-
-class 사람 {
-
-    사람() {
-        System.out.println("사람이 태어났습니다.");
-    }
-
-    사람(int 나이){
-        System.out.printf("태어나서부터 %d살인 사람이 태어낫습니다.%n", 나이);
-    }
-
 }
 
