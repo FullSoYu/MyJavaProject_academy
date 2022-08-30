@@ -22,4 +22,10 @@ class 동물 {
 }
 
 class 사람 extends 동물 {
+
+
+    사람() {
+        super("호랑이");
+    }
+
 }
