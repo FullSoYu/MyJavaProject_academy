@@ -4,31 +4,45 @@ package com.example.MyJavaProject;
 class Main {
     public static void main(String[] args) {
 
-        계산기 a계산기 = new 계산기();
-
-        System.out.println(a계산기.더하기(10, 20));
-        // 출력 : 30
-
-        System.out.println(a계산기.더하기(10, 20, 30));
-        // 출력 : 60
-
-        System.out.println(a계산기.더하기(10.5, 20, 30));
-        // 출력 : 60.5
-
+        new 사과();
+        // 사과가 만들어졌습니다.
+        new 포도();
+        // 포도가 만들어졌습니다.
+        new 사람("홍길동");
+        // 사람 홍길동이 만들어졌습니다.
+        new 사람();
+        // 사람이 만들어졌습니다.
     }
 }
 
-class 계산기 {
+class 사과 {
 
-    int 더하기 (int x, int y) {
-        return x + y;
+    사과() {
+        System.out.println("사과가 만들어졌습니다.");
     }
 
-    int 더하기 (int x, int y, int r) {
-        return x + y + r;
-    }
-
-    double 더하기 (double x, int y, int r) {
-        return x + y + r;
-    }
 }
+
+class 포도 {
+
+    포도() {
+        System.out.println("포도가 만들어졌습니다.");
+    }
+
+}
+
+class 사람 {
+
+    String 이름;
+
+    사람() {
+        System.out.println("사람이 만들어졌습니다.");
+    }
+
+    사람(String 이름) {
+        this.이름 = 이름;
+        System.out.printf("사람 %s이 만들어졌습니다.%n", 이름);
+    }
+
+}
+
