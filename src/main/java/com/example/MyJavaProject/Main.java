@@ -18,3 +18,17 @@ class Main {
     }
 }
 
+class 계산기 {
+
+    int 더하기 (int x, int y) {
+        return x + y;
+    }
+
+    int 더하기 (int x, int y, int r) {
+        return x + y + r;
+    }
+
+    double 더하기 (double x, int y, int r) {
+        return x + y + r;
+    }
+}
