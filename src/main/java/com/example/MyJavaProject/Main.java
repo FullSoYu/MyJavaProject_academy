@@ -18,3 +18,15 @@ class Main {
     }
 }
 
+class 사람 {
+
+    사람() {
+        System.out.println("사람이 태어났습니다.");
+    }
+
+    사람(int 나이){
+        System.out.printf("태어나서부터 %d살인 사람이 태어낫습니다.%n", 나이);
+    }
+
+}
+
