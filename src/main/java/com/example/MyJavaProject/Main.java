@@ -4,45 +4,16 @@ package com.example.MyJavaProject;
 class Main {
     public static void main(String[] args) {
 
-        new 사과();
-        // 사과가 만들어졌습니다.
-        new 포도();
-        // 포도가 만들어졌습니다.
-        new 사람("홍길동");
-        // 사람 홍길동이 만들어졌습니다.
-        new 사람();
-        // 사람이 만들어졌습니다.
+        System.out.println("== 청둥오리객체 생성시작 ==");
+        new 청둥오리();
+        System.out.println("== 청둥오리객체 생성끝 ==");
+		/* 출력
+		== 청둥오리객체 생성시작 ==
+		생물이 생성되었습니다.
+		동물이 생성되었습니다.
+		오리가 생성되었습니다.
+		청둥오리 생성되었습니다.
+		== 청둥오리객체 생성끝 ==
+		*/
     }
 }
-
-class 사과 {
-
-    사과() {
-        System.out.println("사과가 만들어졌습니다.");
-    }
-
-}
-
-class 포도 {
-
-    포도() {
-        System.out.println("포도가 만들어졌습니다.");
-    }
-
-}
-
-class 사람 {
-
-    String 이름;
-
-    사람() {
-        System.out.println("사람이 만들어졌습니다.");
-    }
-
-    사람(String 이름) {
-        this.이름 = 이름;
-        System.out.printf("사람 %s이 만들어졌습니다.%n", 이름);
-    }
-
-}
-
