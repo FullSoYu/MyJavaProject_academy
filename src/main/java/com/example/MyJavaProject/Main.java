@@ -20,5 +20,39 @@ class Main {
 
 
 
+class 생물 {
+
+    생물() {
+        super();
+        System.out.println("생물이 생성되었습니다.");
+    }
+
+}
+
+class 동물 extends 생물 {
+
+    동물() {
+        super();
+        System.out.println("동물이 생성되었습니다.");
+    }
+
+}
+
+class 오리 extends 동물 {
+
+    오리() {
+        super();
+        System.out.println("오리가 생성되었습니다.");
+    }
+
+}
+
+
+class 청둥오리 extends 오리 {
+
+    청둥오리 () {
+        super();
+        System.out.println("청둥오리 생성되었습니다.");
+    }
 
 }
