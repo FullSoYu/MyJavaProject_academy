@@ -16,8 +16,8 @@ class Main {
         ages.remove("영희");
         ages.put("광수", 27);
         ages.keySet();
-//        ages.put("광수", 30);
-//        ages.keySet();
+
+
 //        for (String name : ages.keySet()) {
 //            System.out.println("이름 : " + name + ", 나이 : " + ages.get(name));
 //        }
