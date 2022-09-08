@@ -1,150 +1,143 @@
 
 package com.example.MyJavaProject;
 
-// 문제 : 아래가 실행되도록 해주세요.
-// 조건 : ArrayList 객체에서 내부적으로 int 배열을 사용해서 데이터를 저장해야 합니다.
-// 조건 : int 배열의 초기 길이는 2 입니다.
-// 조건 : 상황에 따라 배열의 길이는 자동으로 증가해야 합니다.
-// 조건 : 엘리먼트(구성요소)를 하나 삭제하면 해당 요소 뒤의 요소들이 전부 앞으로 한칸씩 움직여야 합니다.
-
-//import java.util.ArrayList;
-//
+// 문제 : 아래와 같이 출력되도록 해주세요.
+// 조건 : ages객체 put 메서드는 인자로 String, Integer 만 입력가능해야 합니다.
+// 조건 : ages객체의 get 메서드는 Integer 를 리턴해야 합니다.
+// 조건 : everyone객체 put 메서드는 인자로 String, Object 만 입력가능해야 합니다.
+// 조건 : everyone객체의 get 메서드는 Object 를 리턴해야 합니다.
 class Main {
     public static void main(String[] args) {
-        ArrayList al = new ArrayList();
-
-        System.out.println("al.size() : " + al.size());
-        // 출력 => al.size() : 0
-
-        al.add(100);
-
-        System.out.println("al.get(0) : " + al.get(0));
-        // 출력 => al.get(0) : 100
-
-        al.add(200);
-        al.add(300);
-
-        System.out.println("al.size() : " + al.size());
-        // 출력 => al.size() : 3
-
-        System.out.println("al.get(1) : " + al.get(1));
-        // 출력 => al.get(1) : 200
-
-        al.removeAt(1);
-
-        System.out.println("al.size() : " + al.size());
-        // 출력 => al.size() : 2
-
-        System.out.println("al.get(1) : " + al.get(1));
-        // 출력 => al.get(1) : 300
-
-        al.add(400);
-        al.add(500);
-        al.add(600);
-
-        System.out.println("al.get(3) + al.get(4) : " + (al.get(3) + al.get(4)));
-        // 출력 => al.get(3) + al.get(4) : 1100
-
-        al.showAllValues();
-        // 출력 =>
-		/*
-		== 전체 데이터 출력 ==
-		0 : 100
-		1 : 300
-		2 : 400
-		3 : 500
-		4 : 600
-		*/
-
-        al.add(700, 1);
-        al.add(750, 1);
-
-        al.showAllValues();
-        // 출력 =>
-		/*
-		== 전체 데이터 출력 ==
-		0 : 100
-		1 : 750
-		2 : 700
-		3 : 300
-		4 : 400
-		5 : 500
-		6 : 600
-		*/
+        HashMap<String, Integer> ages = new HashMap<>();
+        ages.put("영희", 22);
+        ages.put("철수", 23);
+        ages.put("민서", 25);
+        ages.put("철수", 27);
+        ages.remove("영희");
+        ages.put("광수", 27);
+        ages.keySet();
+//        ages.put("광수", 30);
+//        ages.keySet();
+//        for (String name : ages.keySet()) {
+//            System.out.println("이름 : " + name + ", 나이 : " + ages.get(name));
+//        }
+        /* 출력결과 */
+        // 이름 : 철수, 나이 : 27
+        // 이름 : 민서, 나이 : 25
+        // 이름 : 광수, 나이 : 27
+        HashMap<String, Object> everyone = new HashMap<>();
+        everyone.put("사람", new 사람());
+        everyone.put("원숭이", new 원숭이());
+        ((사람) everyone.get("사람")).말하다();
+        // 출력 => 사람이 말합니다.
+        ((원숭이) everyone.get("원숭이")).묘기를_부리다();
+        // 출력 => 원숭이가 묘기를 부립니다.
     }
 }
 
-class ArrayList {
-
-    int[] A;
+class HashMap<K, V> {
 
     int size;
 
-    ArrayList() {
-        A = new int[3];
+    Object[] keys;
+
+    Object[] values;
+
+    HashMap() {
+
         size = 0;
+
+        keys = new Object[2];
+
+        values = new Object[2];
     }
 
-    int size() {
-        return size;
-    }
+    void put(K key, V value) {
 
-    void add(int value) {
+        keys[size] = key;
 
+        values[size] = value;
 
-        A[size] = value;
-        size++;
-        exArrray();
-    }
-
-    void add(int value, int index) {
-
-
-        exArrray();
-
-        for (int i = size; i > index; i--) {
-            A[i] = A[i -1];
+        for (int i = 0; i < size; i++) {
+            if (keys[i].equals(key)) {
+                values[i] = value;
+                return;
+            }
         }
 
-        A[index] = value;
         size++;
 
+        exArray();
     }
 
-    int get(int index) {
-        return A[index];
-    }
-
-    void removeAt(int index) {
+    void remove(K key) {
 
         size--;
 
-        for (int i = index; i < size; i++) {
-            A[i] = A[i + 1];
+        for (int i = getIndexkey(key); i < size; i++) {
+            keys[i] = keys[i + 1];
+            values[i] = values[i + 1];
         }
+
 
     }
 
-    void showAllValues() {
-        System.out.println("===출력===");
+    void keySet() {
+
         for (int i = 0; i < size; i++) {
-            System.out.printf("%d : %d\n", i, A[i]);
+
+            System.out.println("이름 : " + keys[i] + " 나이 : " + values[i]);
+
         }
+
 
     }
 
-    void exArrray() {
+    V get(K key) {
 
-        if (size == A.length) {
-            int[] AA = new int[A.length * 2];
+        return (V) values[getIndexkey(key)];
 
+    }
 
-            for (int i = 0; i < A.length; i++) {
-                AA[i] = A[i];
+    int getIndexkey(Object key) {
+
+        for (int i = 0; i < size; i++) {
+            if (keys[i].equals(key)) {
+                return i;
             }
-            A = AA;
         }
 
+        return -1;
+    }
+
+    void exArray() {
+        if (size == keys.length) {
+            Object[] newKeys = new Object[keys.length * 2];
+            Object[] newValues = new Object[values.length * 2];
+
+            for (int i = 0; i < size; i++) {
+                newKeys[i] = keys[i];
+                newValues[i] = values[i];
+            }
+            keys = newKeys;
+            values = newValues;
+        }
+    }
+
+}
+
+class 사람 {
+
+    void 말하다() {
+        System.out.println("사람이 말합니다.");
+    }
+
+}
+
+class 원숭이 {
+
+    void 묘기를_부리다() {
+        System.out.println("원숭이가 묘기를 부립니다.");
     }
 
 }
