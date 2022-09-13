@@ -11,3 +11,22 @@ class Main {
     }
 }
 
+interface 사람 {
+
+}
+
+interface 변호사 {
+
+}
+
+class 홍길동  implements 사람, 변호사, 치과의사, 성화봉송자 {
+
+}
+
+interface 치과의사 {
+
+}
+
+interface 성화봉송자 {
+
+}
