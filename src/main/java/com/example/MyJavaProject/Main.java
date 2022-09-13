@@ -24,3 +24,37 @@ class Main {
     }
 }
 
+class 사람 implements 변호사, 의사 {
+
+    public void 변호하다() {
+        System.out.println("사람이 변호 합니다.");
+    }
+
+    public void 진찰하다() {
+        System.out.println("사람이 진찰 합니다.");
+    }
+
+}
+
+interface 변호사 {
+
+    void 변호하다();
+
+}
+
+class 오랑우탄 implements 변호사, 의사{
+
+    public void 변호하다() {
+        System.out.println("오랑우탄이 변호 합니다.");
+    }
+
+    public void 진찰하다() {
+        System.out.println("오랑우탄이 진찰 합니다.");
+    }
+
+}
+
+interface 의사 {
+    void 진찰하다();
+}
+
