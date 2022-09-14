@@ -12,5 +12,5 @@ class Main {
 }
 
 class 사람 {
-    private int id;
+    public int id;
 }
