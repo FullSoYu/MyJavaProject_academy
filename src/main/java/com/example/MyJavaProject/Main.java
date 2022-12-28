@@ -1,84 +1,50 @@
 package com.example.MyJavaProject;
 
+import java.io.IOException;
+import java.util.Scanner;
+
 class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+
+        Scanner scanner = new Scanner(System.in);
+
+        String t = scanner.nextLine();
+
+        int k = scanner.nextInt();
+
+        int count = 0;
+
+        String[] strArray = t.split("");
 
 
-        오리 a청둥오리 = new 청둥오리();
-        오리 a흰오리 = new 흰오리();
-        오리 a고무오리 = new 고무오리();
-        오리 a고무2오리 = new 고무2오리();
-        오리 a로봇오리 = new 로봇오리();
+        if (k >= 100) {
+            for (int i = 0; i < strArray.length - 2; i++) {
+                int a_i = Integer.parseInt(strArray[i] + strArray[i + 1] + strArray[i + 2]);
 
 
+                if (a_i <= k) {
+                    count = count + 1;
+                }
+            }
+        } else if (100 > k && k >= 10) {
 
-//        오리 a청둥오리 = 오리공장.get("청둥");
-//        오리 a흰오리 = 오리공장.get("흰");
-//        오리 a고무오리 = 오리공장.get("고무");
-//        오리 a고무2오리 = 오리공장.get("고무2");
-//        오리 a로봇오리 = 오리공장.get("로봇");
+            for (int i = 0; i < strArray.length - 1; i++) {
 
-        a청둥오리.날다();
-        // 출력 : 청둥오리 : 날개로 날아갑니다.
-        a청둥오리.울다();
-        // 출력 : 청둥오리 : 꽥꽥!!
+                int a_i = Integer.parseInt(strArray[i] + strArray[i + 1]);
+                if (a_i <= k) {
+                    count = count + 1;
+                }
+            }
+        } else if (k < 10) {
+            for (int i = 0; i < strArray.length; i++) {
+                int A = Integer.parseInt(strArray[i]);
+                if (A <= k) {
+                    count = count + 1;
+                }
+            }
+        }
 
-        a흰오리.날다();
-        // 출력 : 흰오리 : 날개로 날아갑니다.
-        a흰오리.울다();
-        // 출력 : 흰오리 : 꽥꽥!!
-
-        a고무오리.날다();
-        // 출력 : 고무오리 : 저는 날 수 없어요. ㅠㅠ
-        a고무오리.울다();
-        // 출력 : 고무오리 : 삑!삑!
-
-        a고무2오리.날다();
-        // 출력 : 고무오리 : 저는 날 수 없어요. ㅠㅠ
-        a고무2오리.울다();
-        // 출력 : 고무오리 : Peek!Peek!
-
-        a로봇오리.날다();
-        // 출력 : 로봇오리 : 로켓파워로 날아갑니다!!
-        a로봇오리.울다();
-        // 출력 : 로봇오리 : 기계는 울 수 없습니다.
-
-        a고무2오리.set비행아이템(new 로켓날개비행아이템());
-        a고무2오리.날다();
-        // 출력 : 고무오리 : 로켓파워로 날아갑니다!!
+        System.out.println(count);
 
     }
 }
-
-class 오리 {
-
-    void 날다 () {
-
-    }
-
-    void 울다 () {
-
-    }
-
-    set비행아이템(로켓날개비행아이템 로켓날개비행아이템)
-
-}
-
-class 청둥오리 extends 오리{
-
-}
-
-class 흰오리 extends 오리{
-
-}
-
-class 고무오리 extends 오리{
-
-}
-class 고무2오리 extends 오리{
-
-}
-class 로봇오리 extends 오리{
-
-}
-
